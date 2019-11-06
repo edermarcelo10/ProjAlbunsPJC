@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 import com.sun.istack.NotNull;
 
+@Entity
 public class Album {
 	
 	@Id
