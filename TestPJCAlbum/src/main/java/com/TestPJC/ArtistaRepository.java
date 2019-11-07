@@ -107,6 +107,6 @@ public class ArtistaRepository {
 			return new ResultadoModel(0,"Erro ao tentar excluir o cadastro do artista! detalhe:" + e.getMessage());	
 		}
  
-		return new ResultadoModel(1,"Cadastro do artista excluído com sucesso!");
+		return new ResultadoModel(1,"Cadastro do artista excluido com sucesso!");
 	}
 }
