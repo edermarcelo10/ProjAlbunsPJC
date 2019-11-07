@@ -1,0 +1,37 @@
+
+CREATE DATABASE bdpjc_eder
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+UPDATE PG_DATABASE SET ENCODING = PG_CHAR_TO_ENCODING('LATIN1') WHERE DATNAME = 'bdpjc_eder';
+
+
+CREATE SEQUENCE public.SEQ_ID_ARTISTA START 1;
+
+
+CREATE TABLE CAD_ARTISTA (
+Id_Artista Int NOT NULL DEFAULT nextval('public.SEQ_ID_ARTISTA'),
+Nome_Artista Varchar(100)
+);
+
+
+ALTER TABLE CAD_ARTISTA ADD CONSTRAINT PK_ARTISTA PRIMARY KEY (Id_Artista);
+
+
+CREATE SEQUENCE public.SEQ_ID_ALBUM START 1;
+
+
+CREATE TABLE CAD_ALBUM (
+Id_Album Int NOT NULL DEFAULT nextval('public.SEQ_ID_ALBUM'),
+Descricao_Album Varchar(100),
+Id_Artista Int NOT NULL
+);
+
+
+ALTER TABLE CAD_ALBUM ADD CONSTRAINT PK_ALBUM PRIMARY KEY (Id_Album);
